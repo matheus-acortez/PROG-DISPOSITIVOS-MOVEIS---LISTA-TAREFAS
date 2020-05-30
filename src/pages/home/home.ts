@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AdicionarPage } from '../adicionar/adicionar';
+import { NoteService } from '../../providers/note-service/note-service';
 
 
 
@@ -10,12 +11,20 @@ import { AdicionarPage } from '../adicionar/adicionar';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  notes: {title: string} [] = [];
+  constructor(public navCtrl: NavController, private noteService: NoteService) {
+    
   }
+
+    ionViewWillEnter(){
+      this.notes = this.getAllNotes(); 
+    }
 
     addNote(){
       this.navCtrl.push(AdicionarPage);
     }
 
+    getAllNotes(){
+      return this.noteService.getAllNotes();
+    }
 }

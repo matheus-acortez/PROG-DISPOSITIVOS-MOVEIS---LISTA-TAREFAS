@@ -7,7 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AdicionarPage } from '../pages/adicionar/adicionar';
-import { NoteServiceProvider } from '../providers/note-service/note-service';
+import { NoteService } from '../providers/note-service/note-service';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NoteServiceProvider } from '../providers/note-service/note-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +32,7 @@ import { NoteServiceProvider } from '../providers/note-service/note-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NoteServiceProvider
+    NoteService,
   ]
 })
 export class AppModule {}
