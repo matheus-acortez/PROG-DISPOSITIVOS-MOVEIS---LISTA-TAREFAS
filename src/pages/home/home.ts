@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AdicionarPage } from '../adicionar/adicionar';
+
+
 
 @Component({
   selector: 'page-home',
@@ -10,5 +13,9 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
+
+    addNote(){
+      this.navCtrl.push(AdicionarPage);
+    }
 
 }
