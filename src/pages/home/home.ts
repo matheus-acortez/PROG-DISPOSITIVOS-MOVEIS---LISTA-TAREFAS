@@ -12,7 +12,8 @@ import { Note } from '../../models/note.model'
 })
 export class HomePage {
 
-  notes: Note [] = [];
+  notes : Promise<Note[]>;
+
   constructor(public navCtrl: NavController, private noteService: NoteService) {
     
   }
