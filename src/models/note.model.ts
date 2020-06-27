@@ -3,5 +3,5 @@ export interface Note{
     content: string
     date: Date
     createDate: number
-    prioridade: string
+    prior: string
 }

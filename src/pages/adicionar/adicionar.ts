@@ -15,12 +15,14 @@ export class AdicionarPage {
   date: Date = new Date();
   title: string = '';
   content: string = '';
+  prior: string = '';
 
   constructor(public navCtrl: NavController, private noteService: NoteService) {
     this.formGroup = new  FormGroup({
       title: new FormControl(),
       content: new FormControl(),
       date: new FormControl(),
+      prior: new FormControl()
     })
 
 
