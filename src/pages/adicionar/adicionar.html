@@ -22,14 +22,16 @@
         <div class="alert" *ngIf="!formGroup.controls['content'].valid 
         && formGroup.controls['content'].touched">{{ contentAlert }} </div>
       </ion-item>
+      <div class="prior">
       <ion-item>
         <ion-label>Prioridade</ion-label>
         <ion-select name="prior" formControlName="prior">
-            <ion-option value="Muito importante">Muito importante</ion-option>
-            <ion-option value="Importante">Importante</ion-option>
-            <ion-option value="Urgente">Urgente</ion-option>
+            <ion-option value="MUITO IMPORTANTE">Muito importante</ion-option>
+            <ion-option value="IMPORTANTE">Importante</ion-option>
+            <ion-option value="URGENTE">Urgente</ion-option>
         </ion-select>
        </ion-item>
+       </div>
       
 
       <button ion-button type="submit" [disabled]="!formGroup.valid">Salvar</button>
